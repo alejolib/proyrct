@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro Curso de Programación</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="paginaweb.html">Inicio</a></li>
+        </ul>
+    </nav>
+  </header>
+<h1>Registro al curso de programación</h1>
+
+<form action="/registro" method="post">
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" name="nombre"><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+
+  <label for="telefono">Teléfono:</label><br>
+  <input type="tel" id="telefono" name="telefono"><br><br>
+
+  <button type="submit">Registrarse</button>
+</form>
+
+<div id="folio"></div>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+
+    const folio = Math.floor(Math.random() * 10000);
+
+    document.getElementById('folio').innerText = `Folio de identificación: ${folio}`;
+  });
+</script>
+<footer>
+    <p>&copy; 2024 PGM LIBRADO'S. Todos los derechos reservados.</p> 
+</footer> 
+</body>
+</html>
